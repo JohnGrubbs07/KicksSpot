@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.version1</groupId>
-	<artifactId>Tienda</artifactId>
+	<artifactId>KicksSpot</artifactId>
 	<version>1</version>
-	<name>Tienda</name>
+	<name>KicksSpot</name>
 	<description>Proyecto del curso de web y patrones IIIC 2023</description>
 	<properties>
 		<java.version>17</java.version>

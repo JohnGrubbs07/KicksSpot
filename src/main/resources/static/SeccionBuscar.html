@@ -5,45 +5,75 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 -->
 <html>
 <head>
-    <link rel="stylesheet" href="style.css" type="text/css"/>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KicksSpot</title>
     <style>
-        body {
-            margin: 0; 
-            padding: 0; 
-        }
         
         .footer {
             background-color: black; 
             color: blue; 
-            padding: 20px; 
+            padding: 10px; 
             text-align: center; 
             position: fixed; 
             bottom: 0; 
             width: 100%; 
         }
 
+        
         .footer-links a {
             color: blue; 
             text-decoration: none; 
-            margin-right: 20px; 
+            margin-right: 10px; 
             font-size: 30px; 
         }
 
+        
         .footer-links a:hover {
-            text-decoration: seagreen;
-            text-decoration: underline;
+            text-decoration: underline; 
+        }
+
+        
+        .search-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .search-box {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 500px; 
+            box-sizing: border-box; 
+            font-size: 30px; 
+
+        .search-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 20px; 
+
+        .search-button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
     <h1 style="text-align: center; background-color: blue; color: white">KicksSpot</h1>
-    <h2 style="text-align: center">Bienvenido  a KicksSpot.</h2>
-    <p style= "text-align: center" > Bienvenido a la mejor tienda de Kicks Virtual con productos 100% originales y al mejor precio</p>
-  
+    <h2 style="text-align: center">Bienvenido a KicksSpot.</h2>
+    
+    
+    <div class="search-container">
+        <form action="/buscar" method="get">
+            <input type="text" class="search-box" name="q" placeholder="Buscar productos...">
+            <button type="submit" class="search-button">Buscar</button>
+        </form>
+    </div>
+
+    
     <div class="footer">
         <div class="footer-links">
             <a href="Index.html">Inicio</a>
