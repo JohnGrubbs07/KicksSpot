@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Detalles del Tenis</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalles del Tenis</h1>
+        <div>
+            <p><strong>Marca:</strong> <span th:text="${tenis.marca}"></span></p>
+            <p><strong>Talla:</strong> <span th:text="${tenis.talla}"></span></p>
+            <p><strong>Color:</strong> <span th:text="${tenis.color}"></span></p>
+            <p><strong>Precio:</strong> <span th:text="${tenis.precio}"></span></p>
+        </div>
+        <h2>Opiniones y Valoraciones</h2>
+        <div th:each="opinion : ${opiniones}">
+            <div>
+                <span th:text="${opinion.calificacion}"></span> estrellas
+                <p th:text="${opinion.comentario}"></p>
+                <small th:text="${opinion.fechaCreacion}"></small>
+            </div>
+        </div>
+        <h3>Dejar una opinión</h3>
+        <form th:action="@{/tenis/{id}/opinion(id=${tenis.id})}" th:object="${nuevaOpinion}" method="post">
+            <div class="form-group">
+                <label for="calificacion">Calificación:</label>
+                <input type="number" class="form-control" id="calificacion" th:field="*{calificacion}" min="1" max="5">
+            </div>
+            <div class="form-group">
+                <label for="comentario">Comentario:</label>
+                <textarea class="form-control" id="comentario" th:field="*{comentario}"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Opinión</button>
+        </form>
+    </div>
+</body>
+</html>

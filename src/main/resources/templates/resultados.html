@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Resultados de Búsqueda</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Resultados de Búsqueda</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Marca</th>
+                    <th>Talla</th>
+                    <th>Color</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="tenis : ${resultados}">
+                    <td th:text="${tenis.marca}"></td>
+                    <td th:text="${tenis.talla}"></td>
+                    <td th:text="${tenis.color}"></td>
+                    <td th:text="${tenis.precio}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
