@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Programa de Lealtad</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Programa de Lealtad</h1>
+        <p>Acumula puntos por cada compra y cánjealos por recompensas exclusivas.</p>
+        <h2>Clientes Premium</h2>
+        <ul>
+            <li th:each="cliente : ${clientesPremium}">
+                <span th:text="${cliente.nombre}"></span> - <span th:text="${cliente.puntos}"></span> puntos
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

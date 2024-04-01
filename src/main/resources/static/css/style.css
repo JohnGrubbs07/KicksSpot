@@ -1,9 +1,4 @@
 
-/* 
-    Created on : Jan 22, 2024, 8:03:57 PM
-    Author     : John Paul
-*/
-
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
@@ -67,4 +62,15 @@ body {
 
 .opinion .comment {
     margin-top: 5px;
+}
+.promociones {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.promocion {
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
 }

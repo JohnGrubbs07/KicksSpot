@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Promociones</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Promociones</h1>
+        <div class="promociones">
+            <div th:each="promocion : ${promociones}" class="promocion">
+                <h3 th:text="${promocion.nombre}"></h3>
+                <p th:text="${promocion.descripcion}"></p>
+                <p>Descuento: <span th:text="${#numbers.formatDecimal(promocion.descuento, 0, 'COMMA', 2, 'POINT')}"></span>%</p>
+                <p>Válido desde: <span th:text="${#dates.format(promocion.fechaInicio, 'dd/MM/yyyy')}"></span></p>
+                <p>Válido hasta: <span th:text="${#dates.format(promocion.fechaFin, 'dd/MM/yyyy')}"></span></p>
+            </div>
+        </div>
+        <h2>Suscribirse a notificaciones de promociones</h2>
+        <form>
+            <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico">
+            </div>
+            <button type="submit" class="btn btn-primary">Suscribirse</button>
+        </form>
+    </div>
+</body>
+</html>
